@@ -1,7 +1,7 @@
 <?php
-include 'db.php';
+include_once 'db.php';
 
-get_entire_table() {
+function get_entire_table() {
   // Server Communication
   db_connect();
   $server_answer = db_query("SELECT * FROM `telebook`");

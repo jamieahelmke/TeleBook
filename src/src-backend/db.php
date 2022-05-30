@@ -1,9 +1,9 @@
 <?php
 
 // Connection Data
-$hostname = "127.0.0.1";
-$username = "sql_admin";
-$password = "eBlZrkUgK(6f2o1t";
+$hostname = "192.168.245.118";
+$username = "root";
+$password = "";
 $database = "telebook";
 
 // Create Connection
@@ -27,10 +27,16 @@ function db_connect(){
 }
 
 function db_query($str_query) {
-  // QUERY
+  // ONLY FOR QUERYS!
   $sql = $str_query;
   $result = $GLOBALS['1']->query($sql);
-  return $result;
+  if ($GLOBALS['1']->query($sql) === TRUE){
+    echo "Neuer Eintrag erfolgreich erstellt.";
+    return $result;
+  } else {
+    echo "Error: " . $sql . "<br>" . $GLOBALS['1']->error;
+    return 1; 
+  }
 }
  
 function db_close() {

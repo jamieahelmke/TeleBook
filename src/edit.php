@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-
 </head>
 <body>
+
   <p class="header">Telefonbuch</p>
   <p class="edit_mode center">[ EDIT MODE ]</p>
 
@@ -17,44 +17,38 @@
   </div>
   <br>
 
+  <table class="center table">
+    <tr>
+      <th>Eintrag...</th>
+      
+    </tr>
+    <tr>
+      <td>
+       <form action="src-backend/write.php" method="post">
+        <select name="action" id="action">
+          <option value="add">hinzufügen</option>
+          <option value="edit">ändern</option>
+          <option value="delete">löschen</option>
+        </select><br>
+        Abteilung: <input type="text" name="abteilung"><br>
+        Nachname: <input type="text" name="nachname"><br>
+        Vorname: <input type="text" name="vorname"><br>
+        Nummer: <input type="text" name="nummer"><br>
+        Passwort: <input type="password" name="passwort"><br>
+        <input type="submit">
+      </td>
+    </tr>
+  </table>
 
-
-  <!-- Lösche Inhalt aus der DB -->
-  <div class="center">
-    <form action="./edit.php" method="POST">
-      <label for="nummer">Lösche Eintrag mit Nummer:</label>
-      <input type="nummer" id="nummer" name="nummer" />
-      <br>
-      <label for="passwort">Mit Passwort bestätigen:</label>
-      <input type="password" id="passwort" name="passwort" />
-      <br>
-      <button type="submit">Bestätigen</button>
-    </form>
-  </div>
+  
   
 
   <br><br>
   <p id="text1">Tabelle:</p>
   
   <?php
-    include '../src-backend/db.php';
-
-    // Check Args
-    if ( isset($_POST['nummer']) ) {
-      if ( isset($_POST['passwort']) ) {
-        $nummer = $_POST['nummer'];
-
-        db_connect();
-        $server_answer = db_query("SELECT * FROM `telebook` WHERE nummer = $nummer");
-        db_close();
-        echo $server_answer;
-        
-      } else {
-        echo "Passwort wird benötigt."; 
-      }
-    } else {
-      echo "Nummer wird benötigt."; 
-    }
+    include "src-backend/read.php";
+    get_entire_table();
   ?>
 </body>
 </html>

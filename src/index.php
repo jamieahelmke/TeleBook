@@ -20,6 +20,7 @@
   
   <?php
     include "src-backend/read.php";
+    get_entire_table();
   ?>
 </body>
 </html>
