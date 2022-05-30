@@ -1,0 +1,36 @@
+.header {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.edit_mode {
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
+
+.table {
+  text-align: center;
+  font-family: monospace;
+  font-size: large;
+
+  margin: auto;
+
+  border-collapse: collapse;
+  width: 65%;
+  
+}
+table { border: 1px solid; }
+th { border: 1px solid; }
+tr:nth-child(even) { background-color: lightgray; }
+
+
+
+#text1{
+  text-align: center;
+  font-family: monospace;
+}
+
