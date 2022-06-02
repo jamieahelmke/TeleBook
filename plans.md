@@ -1,0 +1,5 @@
+- Password Hashing 
+- Verknüpfung mit AD (LDAP)
+- Anmeldecookies / Session Handling
+- Hüsches UI
+- SQL-Injection-Safety
