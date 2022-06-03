@@ -12,12 +12,32 @@ if (isset($_POST['login_username'])
     $pass = $_POST['login_password'];
     $password_hash = "5f4dcc3b5aa765d61d8327deb882cf99"; //MD5 Hash password
 
-    if ($user == "admin" && md5($pass) == $password_hash) 
+    if ($user === "admin" && md5($pass) === $password_hash) 
         {
-        include "../private/editor.php";
+        // EINGELOGGT
+        $_SESSION['successful_login']=true;
+        include "editor.php";
+
+        if ( isset($_POST['action']) ) {
+          $action = $_POST['action'];
+          switch ($action) {
+            case "add":
+              include "action/add.php";
+              break;
+
+            case "edit":
+              include "action/edit.php";
+              break;
+
+            case "delete":
+              include "action/delete.php";
+              break;
+          }
+        }
     } 
     else 
     {
+      // FALSCHES PASSWORT ODER USERNAME
         echo "
         <script>
           setTimeout(function(){
@@ -32,13 +52,6 @@ if (isset($_POST['login_username'])
             document.getElementById('redirect').innerHTML = ['Zurück in ', timeleft, '...'].join('');
             timeleft -= 1;
           }, 1000);
-
-          function getHelp() {
-            document.getElementByID('comment').innerHTML = ' user=admin, password=password ';
-          }
-
-
-
         </script>
         <div id='login_error'><span class='material-symbols-outlined'>
         error
@@ -49,6 +62,7 @@ if (isset($_POST['login_username'])
 } 
 else
 {
+  // UNGESETZTES PASSWORT
     echo "
     <p id='login_header'>Login</p>
     <div id='login_form'>
@@ -61,19 +75,13 @@ else
             <td><input id='login_input' placeholder='Passwort' type='password' id='login-input' name='login_password' autocomplete='off'><td>
           </tr>
           <tr>
-            <td><button id='login_button'type='submit' id='login-btn'>Absenden</button></td>
+            <td><button id='login_button' 'type='submit'>Absenden</button></td>
           </tr>
         </table>
       </form>
     </div>
 
-    <button class='material-symbols-outlined' id='login_help' onclick='getHelp()'>info</button>
-
-    
-
-
-
-    <p class='comment'></p>";
+    <p class='comment'> // user='admin', password='password' </p>";
 }
 
 ?>

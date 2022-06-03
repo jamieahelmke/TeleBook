@@ -104,15 +104,7 @@ li a:hover {
   text-align: center;
 }
 
-#login_help {
-  width: 100%;
-  border-collapse: collapse;
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  color: rgb(173, 186, 192);
-  transition: 0.3s;
-  margin-top: 20px;
-}
+
 
 /* Login Form End */
 
@@ -150,6 +142,25 @@ li a:hover {
 /* Text End */
 
 /* TABLE */
+
+.db_btn {
+  background-color: rgb(28, 33, 40);
+  color: rgb(173, 186, 192);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-collapse: collapse;
+  border: 1px solid rgb(173, 186, 192);
+  border-radius: 5px;
+  width: 200px;
+}
+
+
 .db_table {
   background-color: rgb(28, 33, 40);
   color: rgb(173, 186, 192);
@@ -164,7 +175,7 @@ li a:hover {
   border-collapse: collapse;
   border: 1px solid rgb(173, 186, 192);
   border-radius: 5px;
-  width: 40%;
+  width: 50%;
 }
 
 .db_tr:nth-child(even) {
@@ -173,6 +184,8 @@ li a:hover {
 
 .db_tr:hover {
   background-color: rgba(255, 255, 255, 0.116);
+  width: 100%;
+  max-width: 48%;
 }
 
 .db_th {
