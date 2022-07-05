@@ -1,3 +1,10 @@
+<!--
+  TELEBOOK
+  Author: Jamie
+  File Description:
+  The Index of the website.
+-->
+
 <?php
 include "html/header.html";
 ?>
