@@ -2,7 +2,7 @@
   TELEBOOK
   Author: Jamie
   File Description:
-  Connector to the database.
+  Connector to the database. Contains functions that interact with the database
 -->
 
 <?php
