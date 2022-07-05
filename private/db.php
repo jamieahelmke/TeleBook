@@ -1,3 +1,10 @@
+<!--
+  TELEBOOK
+  Author: Jamie
+  File Description:
+  Connector to the database.
+-->
+
 <?php
 
 // Connection Data

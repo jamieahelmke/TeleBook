@@ -5,7 +5,7 @@
   After logging in, this is the editor for editing the db.
 -->
 
-<p class="text_header">Editor</p>
+<p class="text_header">Viewer</p>
 <br>
 
 <p class="text" style="text-align: center;">Tabelle:</p>
@@ -79,7 +79,7 @@
             "<td class='db_td'>" . $row["vorname"] . "</td>" .
             "<td class='db_td'>" . $row["nummer"] . "</td>" .
             "<td><button type='submit' onclick='edit(" . $row["id"] . ")'>Edit</button></td>" .
-            "<td><button type='submit' onclick='delete(" . $row["id"] . ")'>Del</button></td>" .
+            //"<td><button type='submit' onclick='delete(" . $row["id"] . ")'>Del</button></td>" .
             "</tr>";
     }
     echo "</table>"; 
