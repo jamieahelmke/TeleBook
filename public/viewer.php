@@ -78,8 +78,13 @@
             "<td class='db_td'>" . $row["nachname"] . "</td>" .
             "<td class='db_td'>" . $row["vorname"] . "</td>" .
             "<td class='db_td'>" . $row["nummer"] . "</td>" .
-            "<td><button type='submit' onclick='edit(" . $row["id"] . ")'>Edit</button></td>" .
             //"<td><button type='submit' onclick='delete(" . $row["id"] . ")'>Del</button></td>" .
+            "<td>
+              <form action='./actions/edit.php' method='POST'>
+                <input  type='hidden' id='id' name='id' value='" . $row['id'] . "'>
+                <button type='submit'>Edit</button>
+              </form>
+            </td>" .
             "</tr>";
     }
     echo "</table>"; 
@@ -88,18 +93,7 @@
   
 ?>
 
-<script>
-  function edit(id) 
-  {
-    location.href = 'actions.d/edit.php';
-  }
 
-  function delete(id)
-  {
-    
-  }
-
-</script>
 
 </body>
 </html>
