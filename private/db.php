@@ -23,8 +23,9 @@ $GLOBALS['1'] = new mysqli(
     $database,
 );
 
+
 // Debug Mode
-$GLOBALS['2'] = $DEBUG = true;
+$GLOBALS['2'] = $DEBUG = false;
 
 /* Functions */ 
 function DEBUG($some_string, $status)

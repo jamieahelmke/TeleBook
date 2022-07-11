@@ -5,10 +5,10 @@
   After logging in, this is the editor for editing the db.
 -->
 
-<p class="text_header">Viewer</p>
+<p class="text_header">Datenbank-Viewer</p>
 <br>
 
-<p class="text" style="text-align: center;">Tabelle:</p>
+
 
 <?php
   if ($_SESSION["successful_login"] == false)
@@ -38,23 +38,20 @@
   {
     include "../private/db.php";
 
-    echo "
-    <form action='actions.php' method='POST'>
-      <select name='action' class='editor_btn'>
-        <option value='add'>Hinzufügen</option>
-        <option value='edit'>Bearbeiten</option>
-        <option value='delete'>Löschen</option>
-      </select>
-      <input name='Hinzufügen' class='editor_btn' type='submit' />
-    </form>
-    ";
-    
-
+    // Datenbank 
     db_connect();
     $result = db_query("SELECT * FROM `telebook`;");
     db_close();
+
+    // Button: Eintrag in die DB Hinzufügen
+    echo "
+    <form action='actions/add.php' method=POST>
+      <button type='submit'>
+    </form>
+    ";
+
   
-    // Create HTML Table
+    // Kreiren der Tabelle
     echo "<table class='db_table'>";
     echo "<tr>";
     echo "<th class='db_th comment'>ID</th>";
