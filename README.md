@@ -1,7 +1,7 @@
 # TeleBook
 
 
-<img src='https://img.shields.io/badge/Release-beta%200.2.0-green'> <br><img src='https://img.shields.io/badge/License-MIT-green'>
+<img src='https://img.shields.io/badge/Release-beta%200.2.0-green'> <br><img src='https://img.shields.io/badge/License-BSD%202--Clause%20License-green'>
 
 <br>
 Telefonbuch-Websoftware für meinen Ausbildungsbetrieb.
